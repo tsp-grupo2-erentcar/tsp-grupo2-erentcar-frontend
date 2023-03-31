@@ -1,0 +1,9 @@
+<div class="background">
+    <app-side-bar></app-side-bar>
+    <div class="container" [ngClass]="this.expanded?'expanded':'close'">
+        <app-tool-bar></app-tool-bar>
+        <div class="router-outlet">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,41 @@
+<div class="side" [ngClass]="this.expanded?'expanded':'close'">
+    <i class='bx bx-chevron-left toggle'  (click)="this.clickToggle()"></i>
+    <i class='bx bx-x' (click)="this.clickToggle()"></i>
+    <div class="navigation">
+        <div class="logo">
+            <span class="logo-icon">
+                <i class='bx bx-car'></i>
+            </span>
+            <span class="option">ERentACar</span>
+        </div>
+        <ul>
+            <li class="active">
+                  <b></b>
+                  <b></b>
+                 <a href="#">
+                    <span class="icon">
+                        <i class='bx bx-home'></i>
+                    </span>
+                    <span class="option">Home</span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="#">
+                    <span class="icon">
+                        <i class='bx bx-home'></i>
+                    </span>
+                    <span class="option">Home</span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="#">
+                    <span class="icon">
+                        <i class='bx bx-home'></i>
+                    </span>
+                    <span class="option">Home</span>
+                </a>
+            </li>
+        </ul>
+    </div>    
+</div>
+

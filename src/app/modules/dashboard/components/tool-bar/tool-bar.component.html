@@ -1,0 +1,29 @@
+<div class="tool-bar">
+    <i class='bx bx-menu' (click)="this.clickToggle()"></i>
+    <span>Welcome</span>
+    <div class="profile">
+        <img src="https://i.pinimg.com/originals/ea/2e/87/ea2e87f2ad40e7e6bb29450bc019ac60.jpg" alt="profile">
+        <span class="name">Nombre y apellidos</span>
+        <span class="icon-container">
+            <i class='bx bxs-down-arrow' [ngClass]="this.show?'show':'hide'" (click)="this.clickDropMenu()"></i>
+            <ul class="drop-menu" *ngIf="this.show">
+                <li class="options">
+                    <span class="icon"><i class='bx bx-cog'></i></span>
+                    <span class="option">Configuration</span>
+                </li>
+                <li class="options">
+                    <span class="icon"><i class='bx bx-error-circle'></i></span>
+                    <span class="option">Information</span>
+                </li>
+                <li class="options">
+                    <span class="icon"><i class='bx bx-book-bookmark'></i></span>
+                    <span class="option">Terns</span>
+                </li>
+                <li class="options">
+                    <span class="icon"><i class='bx bxs-log-out'></i></span>
+                    <span class="option">Log out</span>
+                </li>
+            </ul>
+        </span>
+    </div>
+</div>

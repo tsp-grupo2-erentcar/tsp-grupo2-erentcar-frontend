@@ -1,0 +1,5 @@
+<div class="container" [ngClass]="{'no-clicks':!this.changeStars}">
+    <i *ngFor="let item of [0,1,2,3,4]; index as i" [ngClass]="this.returnStars(i)" 
+    (click)="this.selectStar(i)"></i>
+    <span>{{this.rating+"/5"}}</span>
+</div>

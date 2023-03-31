@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans&display=swap');
+*{
+    font-family: 'DM Sans', sans-serif;
+    list-style: none;
+}
+
+.toggle{
+    background: #c04824;
+    border-radius: 50%;
+    color: #ffff;
+    display: flex;
+    font-size: 1.2rem;
+    height: 24px;
+    top: 23px;
+   /* position: absolute;*/
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+    width:24px;
+    z-index: 6;
+}
+.bx-x{
+    display:none;
+}
+.expanded .toggle {
+    left: 188px;
+}
+.close .toggle{
+    left: 48px;
+    transform: rotate(180deg);
+}
+.logo{
+    color: #ffff;
+    font-size: 1.4rem;
+    line-height: 70px;
+    width:100%;
+    display: flex;
+    padding-left: 5px;
+}
+.navigation .logo .logo-icon{
+    min-width: 55px;
+    text-align: center;
+}
+.navigation{
+    box-sizing: initial;
+    height: 100vh;
+    left:0px;
+    position: fixed;
+    top: 0px;
+    background: #2A283D;
+    overflow-x: hidden;
+    transition: 0.3s;
+    z-index: 5;
+}
+.expanded .navigation {
+    width: 200px;
+}
+.close .navigation {
+    width: 60px;
+}
+.navigation ul{
+    margin-top: 40px;
+    padding-left: 5px;
+    width: 100%;
+}
+.navigation ul li{
+    width: 100%;
+    position: relative;
+    margin-top: 10px;
+}
+.navigation ul li a{
+    display: block;
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+    color: #ffff;
+}
+.navigation ul li a .icon{
+    height: 60px;
+    min-width: 55px;
+    line-height: 60px;
+    text-align: center;
+    font-size: 1.3rem;
+}
+.navigation ul li a .option{
+    display: block;
+    height: 60px;
+    line-height: 60px;
+    padding-left: 5px;
+    white-space: nowrap;
+}
+.navigation ul .list:hover a{
+    color: #f0a535;
+}
+.navigation ul .active{
+    background: #1F1D2C;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+.navigation ul .active a{
+    color: #f0a535;
+}
+.navigation ul .active b:nth-child(1){
+    position: absolute;
+    top:-20px;
+    height:20px;
+    width: 100%;
+    background: #1F1D2C;
+}
+.navigation ul .active b:nth-child(1)::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-bottom-right-radius: 20px;
+    background: #2A283D;
+}
+.navigation ul .active b:nth-child(2){
+    position: absolute;
+    bottom:-20px;
+    height:20px;
+    width: 100%;
+    background: #1F1D2C;
+}
+.navigation ul .active b:nth-child(2)::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-top-right-radius: 20px;
+    background: #2A283D;
+}
+@media (max-width:768px) {
+    .toggle{
+        display: none;
+    }
+    .expanded .bx-x{
+        background: #c04824;
+        border-radius: 50%;
+        color: #ffff;
+        display: flex;
+        font-size: 1.6rem;
+        height: 32px;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        top: 14px;
+        transition:0.3s;
+        width:32px;
+        right: 11px;
+        z-index: 6;   
+    }
+    .expanded .navigation{
+        min-width: 100vw;
+    }
+    .close .navigation{
+        left: -100vw;
+    }/*al quitar la clase .close, vuelve a left:0px*/
+    /*.expanded .navigation{
+        width:100vw;
+    }*/
+}

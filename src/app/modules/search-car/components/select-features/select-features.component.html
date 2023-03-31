@@ -1,0 +1,14 @@
+<div class="container" [ngClass]="this.show?'show':'close'"  #selectComponent>
+    <div class="content" (click)="this.clickShow()">
+        <span>Features</span>
+        <span><i class='bx bx-chevron-down' ></i></span>
+    </div>
+    <div class="options" *ngIf="this.show" @inOutAnimation>
+        <div class="feature" *ngFor="let feature of features;index as i" 
+        [ngClass]="this.feature.select?'select':'no-select'" (click)="this.clickSelect(features[i])">
+            <i class='{{feature.icon}}'></i>
+            <span>{{feature.name}}</span>
+        </div>
+
+    </div>
+</div>

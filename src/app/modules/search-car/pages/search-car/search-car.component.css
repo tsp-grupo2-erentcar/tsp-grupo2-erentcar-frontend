@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans&display=swap');
+*{
+    font-family: 'DM Sans', sans-serif;
+    list-style: none;
+}
+.button-filter{
+    display: none;
+}
+.filter{
+    background: #242535;
+    padding: 20px 30px;
+    width: 100%;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    max-width: 1300px;
+    margin: auto;
+    z-index: 3;
+}
+.filter-content{
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 20px;
+    justify-content: space-between;
+}
+.select-brand{
+    margin-right: 5px;
+}
+.container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+.bottom-filter{
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    text-align: right;
+}
+.input{
+    width: 160px;
+}
+.select{
+    width: 160px;
+}
+.button-result{
+    width: 160px;
+}
+.cars{
+    width: 100%;
+    max-width: 1300px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 20px;
+    row-gap: 10px;
+}
+
+@media (max-width:768px){
+    .button-filter{
+        display: block;
+        width: 100%;
+    }
+    .filter{
+        position: absolute;
+        transition: 0.3s;
+    }
+    .close-filter{
+        left: -100%;
+    }
+    .show-filter{
+        top: 120px;
+        left: 0;
+    }
+    .input{
+        width: 142px;
+    }
+    .select{
+        width: 140px;
+    }
+    .container{
+        justify-content: center;
+    }
+    .filter-content{
+        justify-content: center;
+        flex-direction: column;
+    }
+    .bottom-filter{
+        text-align: center;
+    }
+    .cars{
+        justify-content: center;
+    }
+}

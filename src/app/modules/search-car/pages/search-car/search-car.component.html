@@ -1,0 +1,65 @@
+<app-my-button class="button-filter" (click)="this.clickShowFilter()">Filter</app-my-button>
+<section class="filter" [ngClass]="this.showFilter?'show-filter':'close-filter'">
+   <div class="filter-content">
+      <div class="container">
+         <app-my-select placeholder="Brand" [(model)]="this.aux" class="select-brand select">
+            <app-my-option value="1">Toyota</app-my-option>
+            <app-my-option value="2">Nissan</app-my-option>
+            <app-my-option value="3">Hyundai</app-my-option>
+            <app-my-option value="4">Fiat</app-my-option>
+            <app-my-option value="5">Subaru</app-my-option>
+         </app-my-select>
+         <app-my-select placeholder="Model" class="select">
+            <app-my-option value="1">Option 1</app-my-option>
+            <app-my-option value="2">Option 2</app-my-option>
+            <app-my-option value="3">Option 3</app-my-option>
+            <app-my-option value="4">Option 4</app-my-option>
+            <app-my-option value="5">Option 5</app-my-option>
+         </app-my-select>
+      </div>
+      <div class="container">
+         <app-my-input placeholder="Price" appBorder [border]="'5px 0 0 5px'" class="input"></app-my-input>
+         <app-my-input placeholder="Until" [border]="'0px 5px 5px 0px'" class="input"></app-my-input>
+      </div>
+      <div class="container">
+         <app-my-input placeholder="Mileage" [border]="'5px 0 0 5px'" class="input"></app-my-input>
+         <app-my-input placeholder="Until" [border]="'0px 5px 5px 0px'" class="input"></app-my-input>
+      </div>
+      <div class="container">
+         <app-my-select placeholder="Seats" class="select-brand select">
+            <app-my-option value="1">2</app-my-option>
+            <app-my-option value="2">4</app-my-option>
+            <app-my-option value="3">5</app-my-option>
+            <app-my-option value="4">7</app-my-option>
+            <app-my-option value="5">9</app-my-option>
+         </app-my-select>
+         <app-my-select placeholder="Fuel" class="select">
+            <app-my-option value="1">Petrol</app-my-option>
+            <app-my-option value="2">Diesel</app-my-option>
+         </app-my-select>
+      </div>
+      <div class="container">
+         <app-select-features></app-select-features>
+      </div>
+      <div class="container">
+         <app-my-select placeholder="Type" class="select-brand select">
+            <app-my-option value="1">Cars</app-my-option>
+            <app-my-option value="2">SUVs</app-my-option>
+            <app-my-option value="3">Minivans</app-my-option>
+            <app-my-option value="4">Trucks</app-my-option>
+            <app-my-option value="5">Vans</app-my-option>
+         </app-my-select>
+         <app-my-select placeholder="Gearbox" class="select">
+            <app-my-option value="1">Petrol</app-my-option>
+            <app-my-option value="2">Diesel</app-my-option>
+         </app-my-select>
+      </div>
+   </div>
+   <div class="bottom-filter">
+      <app-my-button class="button-result">Show result</app-my-button>
+   </div>
+</section>
+<section class="cars">
+   <app-card-car *ngFor="let car of cars; index as i" [car]="this.cars[i]"></app-card-car>
+   
+</section>

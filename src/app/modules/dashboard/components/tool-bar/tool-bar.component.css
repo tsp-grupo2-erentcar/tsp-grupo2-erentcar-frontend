@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans&display=swap');
+*{
+    font-family: 'DM Sans', sans-serif;
+}
+.tool-bar{
+    height: 70px;
+    color:#fff;
+    display: flex;
+    align-items: center;
+    font-size: 1.4rem;
+    justify-content: space-between;
+    padding-right: 25px;
+    z-index: 1;
+    margin-bottom: 5px;
+}
+.bx-menu{
+    display: none;
+}
+.profile{
+    align-items: center;
+    display: flex;
+    font-size: 1.0rem;
+    justify-content: center;
+}
+.profile .bxs-down-arrow{
+    color:#f0a535;
+}
+.profile .name{
+    margin-right: 15px;
+    /*width: 150px;*/
+    max-width: 210px;
+    min-width: 160px;
+}
+.profile img{
+    width:55px;
+    height: 55px;
+    border-radius: 50%;
+    margin-right: 12px;
+}
+.icon-container{
+    position: relative;
+}
+.icon-container i{
+    font-size: 1.2rem;
+    transition: 0.5s;
+}
+.show{
+    transform: rotate(-180deg);
+}
+.drop-menu{
+    position: absolute;
+    border-radius: 10px;
+    color: #fff;
+    top: 32px;
+    right: 0px;
+    width: 180px;
+    background: #313242;
+    list-style: none;
+    padding:10px;
+    z-index: 1;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+.options{
+    line-height: 38px;
+    padding: 0px 8px;
+    cursor: pointer;
+}
+.options:hover{
+    background: #3f4055;
+}
+.options .icon{
+    font-size: 0.9rem;
+    margin-right: 5px;
+}
+.options .option{
+    font-size: 1.1rem;
+}
+@media (max-width:768px){
+    .tool-bar{
+        padding-left: 20px;
+        border-bottom: solid 1px grey;
+    }
+    .bx-menu{
+        display: block;
+    }
+    .profile .name{
+        display: none;
+    }
+    .drop-menu{
+        top: 42px;
+    }
+}

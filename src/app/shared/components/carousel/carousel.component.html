@@ -1,0 +1,17 @@
+<div class="carousel-container">
+    <img *ngFor="let image of images; index as i" src="{{image.url}}" alt="image-car" 
+    [ngClass]="{'active':this.selectedImage==i}" [style.animation-name]="this.animation" 
+    [style.animation-duration]="this.durationAnimation"> 
+
+    <div class="carousel-line-container">
+        <span *ngFor="let line of images; index as i" class="line" 
+        [ngClass]="{'active':this.selectedImage==i}" (click)="this.selectImage(i)"></span>
+    </div>
+
+    <div class="btn-carousel btn-prev" *ngIf="this.buttons">
+        <i class='bx bx-chevron-left icon-carousel' (click)="this.clickPrev()"></i>
+    </div>
+    <div class="btn-carousel btn-next" *ngIf="this.buttons">
+        <i class='bx bx-chevron-right icon-carousel' (click)="this.clickNext()"></i>
+    </div>
+</div>

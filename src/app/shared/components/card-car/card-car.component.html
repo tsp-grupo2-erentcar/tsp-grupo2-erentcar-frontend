@@ -1,0 +1,38 @@
+<div class="card" (mouseenter)="this.autoSlide()" (mouseleave)="this.clearAutoSlide()">
+   <img src="{{this.car.brand.url}}" alt="brand image" class="brand-image">
+   <div class="top-card">
+      <app-carousel [images]="this.car.images" #carouselComponent></app-carousel>
+   </div>
+   <div class="info-card">
+      <div class="model">
+         <div class="model-heart center-vertical">
+            <p>{{this.car.brand.name+" "+ this.car.model}}</p>
+            <i class='bx bx-heart'></i>
+         </div>
+         <div class="stars center-vertical">
+            <!--<i *ngFor="let item of [0,1,2,3,4]; index as i" [ngClass]="this.returnStars(i)" ></i>-->
+            <app-stars [(rating)]="this.car.rating" ></app-stars>
+         </div>
+      </div>
+      <div class="features">
+         <div class="feature" *ngFor="let feature of this.car.features">
+            <span>
+               <i [ngClass]="this.returnIconFeature(feature.name)" ></i>
+            </span>
+            <span class="feature-name">{{feature.name}}</span>
+         </div>
+      </div>
+      <div class="price center-vertical">
+         <p><span class="value">{{"$"+this.car.pricePerDay}}</span>/day</p>
+         <div class="seats-type">
+            <span>{{"Seats "+this.car.seats}}</span>
+            <span class="separator">
+            </span>
+            <span>{{this.car.type}}</span>
+         </div>
+      </div>
+   </div>
+   <div class="button-container">
+      <app-my-button>See More</app-my-button>
+   </div>
+</div>

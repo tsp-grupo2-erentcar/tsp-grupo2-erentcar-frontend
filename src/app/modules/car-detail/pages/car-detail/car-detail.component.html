@@ -1,0 +1,47 @@
+<section class="grid-container">
+    <div class="images background">
+       <div class="image-active" #imageContainer 
+       (mouseenter)="this.mouseEnter()" (mousemove)="this.mouseMove($event)" (mouseleave)="this.mouseLeave()">
+            <img src="{{this.imageSelected.image.url}}" alt="image-selected"
+            [style.transform]="'scale('+this.zoom+','+this.zoom+')'" [style.transform-origin]="this.zoomX+'%'+''+this.zoomY+'%'">
+       </div>
+       <div class="images-list">
+            <img *ngFor="let itemImage of this.itemImages" src="{{itemImage.image.url}}" alt="image-car" 
+            [ngClass]="{'image-selected':this.itemImage.selected}" (click)="this.clickSelectImage(itemImage)">
+       </div>
+    </div>
+    <div class="info background">
+        2
+        <!--<div class=focus>
+            <div class="wrapper" [style.transform]="'translateX('+this.index+'px)'"
+            [style.transition]='this.animation'>
+                <img *ngFor="let item of images;index as i" src="{{item.url}}" alt="prueba">
+            </div>
+        </div>
+        <button (click)="prev()">prev</button>
+        <button (click)="next()">next</button>
+        {{this.index}}-->
+    </div>
+    <div class="owner background">
+        <p class="title">Owner</p>
+        <div class="owner-info-profile">
+            <div class="image-owner-container">
+                <img src="{{this.owner.img}}" alt="image owner">
+            </div>
+            <div class="owner-info">
+                <p class="owner-name">{{this.owner.name+" "+this.owner.lastName}}</p>
+                <app-stars [rating]="this.owner.rating"></app-stars>
+                <div class="visit-profile">
+                    <span>Visit profile</span>
+                    <i class='bx bx-right-arrow-alt'></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="background">
+        <p class="title">User reviews</p>
+        <div class="ratings-container">
+            <app-rating *ngFor="let rating of ratings" [rating]="this.rating"></app-rating>
+        </div>
+    </div>
+</section>

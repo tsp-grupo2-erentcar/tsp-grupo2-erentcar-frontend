@@ -1,0 +1,47 @@
+.rating-container{
+    background-color:#1F1D2C;
+    margin: auto;
+    width: 450px;
+    display: flex;
+    padding: 8px 0px 5px 5px;
+    border-radius: 10px;
+}
+.rating-container img{
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    background-color: white;
+    padding: 2px;
+}
+.rating-left{
+    width: 220px;
+    text-align: center;
+}
+.rating-left p{
+    color: #fff;
+    font-size: 0.9rem;
+}
+.rating-right{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 4px;
+}
+.rating-stars{
+    padding: 3px 0px;
+    background-color: #2b2c41;
+}
+.rating-comment{
+    color: #fff;
+    min-height: 100px;
+    padding-right: 2px;
+}
+.rating-date{
+    font-size: 0.8rem;
+    color: rgb(204, 204, 204);
+}
+@media (max-width:768px){
+    .rating-container{
+        width: 100%;
+    }
+}

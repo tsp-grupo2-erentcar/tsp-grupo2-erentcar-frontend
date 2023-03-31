@@ -1,0 +1,21 @@
+/*:host{
+    width: 100%;
+}*/
+.option{
+    padding: 0px 0px 0 5px;
+    line-height: 36px;
+    word-break:break-all;
+    background: #313242;
+    color: rgb(172, 172, 172);
+}
+.option.no-selected:hover{
+    background: #3f4055;
+}
+.option.selected{
+    background: #4c4d66;
+    color: white;
+}
+.first{
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}

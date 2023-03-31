@@ -1,0 +1,26 @@
+:host{
+    display: inline-block;
+}
+input{
+    width: 100%;
+    border: solid 1px #313242;
+    border-radius: 5px;
+    height: 42px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    padding: 0px 12px 0 8px;
+    font-size: 1.1rem;
+    font-family: 'DM Sans', sans-serif;
+    outline: none;
+    background: #313242;
+    color: #fff;
+}
+input::placeholder{
+    color: rgb(189, 189, 189);
+}
+input:focus::placeholder {
+   opacity: 0;
+   transition: opacity .3s;
+}
+input:focus{
+    border-color:#f0a535;
+}

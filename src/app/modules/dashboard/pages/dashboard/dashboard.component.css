@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans&display=swap');
+*{
+    font-family: 'DM Sans', sans-serif;
+}
+.background{
+    background-color: #1F1D2C;
+}
+.container{
+    min-height: 100vh;
+    transition: 0.3s;
+}
+.container.expanded {
+   margin-left: 220px;
+}
+.container.close{
+    margin-left: 80px;
+}
+.router-outlet{
+    padding: 0 25px 10px 0px;
+}
+@media (max-width:768px){
+    .container.close, .container.container.expanded{
+        margin-left: 0px;
+    }
+    .router-outlet{
+        padding-right: 0px;
+    }
+}

@@ -1,0 +1,12 @@
+<div class="container" [ngClass]="this.show?'show':'close'"  #selectComponent>
+    <div class="content" (click)="this.clickShow()">
+        <ng-container *ngIf="this.thereSelectedOption!=0; else placeholderTemplate">
+            <span class="option-text">{{this.nameShow}}</span>
+        </ng-container>
+        <span><i class='bx bx-chevron-down' ></i></span>
+    </div>
+    <ng-template #placeholderTemplate><span class="placeholder">{{this.placeholder}}</span></ng-template>
+    <div class="options" *ngIf="this.show" @inOutAnimation>
+        <ng-content></ng-content>
+    </div>
+</div>

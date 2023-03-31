@@ -1,0 +1,15 @@
+<div class="rating-container">
+    <div class="rating-left">
+        <img src="{{this.rating.userRating.img}}" alt="user-rating-image">
+        <p>{{this.rating.userRating.name+" "+this.rating.userRating.lastName}}</p>
+    </div>
+    <div class="rating-right">
+        <div class="rating-stars">
+            <app-stars [rating]="this.rating.rating"></app-stars>
+        </div>
+        <span class="rating-date">9/11/2022</span>
+        <div class="rating-comment">
+            {{this.rating.comment}}
+        </div>
+    </div>
+</div>
