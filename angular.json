@@ -1,12 +1,12 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "cli": {
-    "analytics": "db822a3b-1438-47ed-8bc4-7505155676dc"
+    "analytics": "b58044ba-34b2-4022-8489-83c157342c59"
   },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ERentACar": {
+    "frontend-web-application-erentcar": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -20,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/ERentACar",
+            "outputPath": "dist/frontend-web-application-erentcar",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -30,6 +30,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -71,10 +72,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "ERentACar:build:production"
+              "browserTarget": "frontend-web-application-erentcar:build:production"
             },
             "development": {
-              "browserTarget": "ERentACar:build:development"
+              "browserTarget": "frontend-web-application-erentcar:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -82,7 +83,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ERentACar:build"
+            "browserTarget": "frontend-web-application-erentcar:build"
           }
         },
         "test": {
@@ -97,6 +98,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -105,5 +107,5 @@
       }
     }
   },
-  "defaultProject": "ERentACar"
+  "defaultProject": "frontend-web-application-erentcar"
 }

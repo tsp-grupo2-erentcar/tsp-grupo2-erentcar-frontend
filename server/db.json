@@ -1,0 +1,431 @@
+{
+  "clients": [
+    {
+      "id": 1,
+      "names": "Sergio",
+      "lastNames": "Guanilo",
+      "address": "San Miguel 123",
+      "cellphoneNumber": 987654321,
+      "averageResponsibility": -1,
+      "responseTime": -1,
+      "rate": -1,
+      "imagePath": "",
+      "planId": null,
+      "cars": [
+        {
+          "id": 1,
+          "address": "La Marina 456",
+          "year": 2019,
+          "mileage": 42,
+          "seating": 2,
+          "manual": false,
+          "carValueInDollars": 212760,
+          "extraInformation": "Auto de lujo del 2019",
+          "rate": 0,
+          "rentAmountDay": 562,
+          "imagePath": "https://img.remediosdigitales.com/de1542/lamborghini-huracan_evo-2019-1280-01/1366_2000.jpg",
+          "category": "LARGE",
+          "mechanicConditions": "EXCELLENT",
+          "carModel": {
+            "id": 1,
+            "name": "Huaracan Evo",
+            "imagePath": "https://www.diariomotor.com/imagenes/2019/01/lamborghini-huracan-evo-2019-0119-014.jpg",
+            "carBrand": {
+              "id": 1,
+              "name": "Lamborghini",
+              "imagePath": "https://upload.wikimedia.org/wikipedia/commons/e/e4/Lamborghini_Gallardo_5.2_%2708_%289402936597%29.jpg"
+            }
+          },
+          "clientId": 1
+        },
+        {
+          "id": 2,
+          "address": "Av La Marina",
+          "year": 2022,
+          "mileage": 10,
+          "seating": 5,
+          "manual": true,
+          "carValueInDollars": 30000,
+          "extraInformation": "Auto del 2022",
+          "rate": 0,
+          "rentAmountDay": 89,
+          "imagePath": "https://www.motortrend.com/uploads/2022/02/2022_Toyota_Avalon_Touring_001.jpg",
+          "category": "PREMIUM",
+          "mechanicConditions": "EXCELLENT",
+          "carModel": {
+            "id": 3,
+            "name": "Avalon",
+            "imagePath": "https://www.toyota.com/imgix/content/dam/toyota/jellies/max/2022/avalon/limited/3554/1k6/2.png?fm=webp&bg=white&w=768&h=328&q=90",
+            "carBrand": {
+              "id": 2,
+              "name": "Toyota",
+              "imagePath": "http://www.toyocosta.com/blog/wp-content/uploads/2014/01/toyota-cars-logo-emblem.jpg"
+            }
+          },
+          "clientId": 1
+        }
+      ],
+      "favourites": [
+        {
+          "id": 9,
+          "clientId": 1,
+          "car": {
+            "id": 1,
+            "address": "La Marina 456",
+            "year": 2019,
+            "mileage": 42,
+            "seating": 2,
+            "manual": false,
+            "carValueInDollars": 212760,
+            "extraInformation": "Auto de lujo del 2019",
+            "rate": 0,
+            "rentAmountDay": 562,
+            "imagePath": "https://img.remediosdigitales.com/de1542/lamborghini-huracan_evo-2019-1280-01/1366_2000.jpg",
+            "category": "LARGE",
+            "mechanicConditions": "EXCELLENT",
+            "carModel": {
+              "id": 1,
+              "name": "Huaracan Evo",
+              "imagePath": "https://www.diariomotor.com/imagenes/2019/01/lamborghini-huracan-evo-2019-0119-014.jpg",
+              "carBrand": {
+                "id": 1,
+                "name": "Lamborghini",
+                "imagePath": "https://upload.wikimedia.org/wikipedia/commons/e/e4/Lamborghini_Gallardo_5.2_%2708_%289402936597%29.jpg"
+              }
+            },
+            "clientId": 1
+          }
+        }
+      ],
+      "rents": [],
+      "reservations": [],
+      "userId": 5
+    },
+    {
+      "id": "2",
+      "names": "Martin Fernando",
+      "lastNames": "Quevedo Mendoza",
+      "address": "Jr. Hipólito Archuleta # 297 Piso 7 San Miguel",
+      "cellphoneNumber": "999123765",
+      "averageResponsibility": 85,
+      "responseTime": 7,
+      "rate": 4.2,
+      "imagePath": "Juan.jpg",
+      "planId": "2",
+      "email": "martinque@gmail.com",
+      "password": "martinque"
+    },
+    {
+      "id": "3",
+      "names": "María Paula Daniela",
+      "lastNames": "Treviño Armas",
+      "address": "Urb. Felipe Salgado # 573 Lince",
+      "cellphoneNumber": "987654321",
+      "averageResponsibility": 95,
+      "responseTime": 4,
+      "rate": 4.5,
+      "imagePath": "",
+      "planId": "3",
+      "email": "mariatrevi@gmail.com",
+      "password": "mariatrevi"
+    },
+    {
+      "id": "9db6887b-29e5-479c-8540-fbf0427c98ed",
+      "names": "eliana",
+      "lastNames": "martinez",
+      "address": "Av. Sanchez",
+      "cellphoneNumber": "988122111",
+      "averageResponsibility": -1,
+      "responseTime": -1,
+      "rate": -1,
+      "imagePath": "",
+      "planId": "",
+      "email": "eliana@gmail.com",
+      "password": "Password1"
+    }
+  ],
+  "languages": [
+    {
+      "id": "1",
+      "name": "Spanish"
+    },
+    {
+      "id": "2",
+      "name": "English"
+    },
+    {
+      "id": "3",
+      "name": "Portuguese"
+    },
+    {
+      "id": "4",
+      "name": "French"
+    }
+  ],
+  "clientLanguages": [],
+  "clientSocialNetworks": [
+    {
+      "id": "1",
+      "clientId": "1",
+      "address": "https://www.facebook.com/",
+      "socialname": "facebook"
+    }
+  ],
+  "clientsComments": [
+    {
+      "id": "1",
+      "clientId": "1",
+      "clientCommentId": "2",
+      "date": "14/8/2021",
+      "starts": 4,
+      "comment": "I consider that she is a very responsible renter. In my attention she prepared all the papers and sanitary accessories for her."
+    },
+    {
+      "id": "1",
+      "clientId": "1",
+      "clientCommentId": "3",
+      "date": "2/8/2021",
+      "starts": 5,
+      "comment": "He took good care of me. The car is in perfect condition. And also he gave me advice on how to drive that vehicle."
+    }
+  ],
+  "cars": [
+    {
+      "id": 1,
+      "address": "La Marina 456",
+      "year": 2019,
+      "mileage": 42,
+      "seating": 3,
+      "manual": false,
+      "carValueInDollars": 212760,
+      "extraInformation": "Auto de lujo del 2019",
+      "rate": 0,
+      "rentAmountDay": 562,
+      "imagePath": "https://img.remediosdigitales.com/de1542/lamborghini-huracan_evo-2019-1280-01/1366_2000.jpg",
+      "category": "LARGE",
+      "mechanicCondition": "EXCELLENT",
+      "carModel": {
+        "id": 1,
+        "name": "Huaracan Evo",
+        "imagPath": "https://www.diariomotor.com/imagenes/2019/01/lamborghini-huracan-evo-2019-0119-014.jpg",
+        "carBrand": {
+          "id": 1,
+          "name": "Lamborghini",
+          "imagePath": "https://upload.wikimedia.org/wikipedia/commons/e/e4/Lamborghini_Gallardo_5.2_%2708_%289402936597%29.jpg"
+        }
+      },
+      "clientId": "1"
+    },
+    {
+      "id": 2,
+      "address": "Av La Marina",
+      "year": 2022,
+      "mileage": 10,
+      "seating": 5,
+      "manual": true,
+      "carValueInDollars": 30000,
+      "extraInformation": "Auto del 2022",
+      "rate": 0,
+      "rentAmountDay": 89,
+      "imagePath": "https://www.motortrend.com/uploads/2022/02/2022_Toyota_Avalon_Touring_001.jpg",
+      "category": "PREMIUM",
+      "mechanicConditions": "EXCELLENT",
+      "carModel": {
+        "id": 3,
+        "name": "Avalon",
+        "imagePath": "https://www.toyota.com/imgix/content/dam/toyota/jellies/max/2022/avalon/limited/3554/1k6/2.png?fm=webp&bg=white&w=768&h=328&q=90",
+        "carBrand": {
+          "id": 2,
+          "name": "Toyota",
+          "imagePath": "http://www.toyocosta.com/blog/wp-content/uploads/2014/01/toyota-cars-logo-emblem.jpg"
+        }
+      },
+      "clientId": 1
+    }
+  ],
+  "my-messages": [
+    {
+      "id": "1",
+      "description": "INTENTO 1",
+      "message": "HOLA"
+    },
+    {
+      "id": "1",
+      "description": "INTENTO 2",
+      "message": "HOLAA"
+    },
+    {
+      "id": "1",
+      "description": "INTENTO 3",
+      "message": "HOLAAA"
+    }
+  ],
+  "mechanicConditions": [
+    {
+      "id": "1",
+      "name": "Regular"
+    },
+    {
+      "id": "2",
+      "name": "Good"
+    },
+    {
+      "id": "3",
+      "name": "Excellent"
+    }
+  ],
+  "carsMechanicConditions": [
+    {
+      "id": "1",
+      "carId": "1",
+      "mechanicConditionId": "2"
+    },
+    {
+      "id": "2",
+      "carId": "2",
+      "mechanicConditionId": "3"
+    }
+  ],
+  "categoryCars": [
+    {
+      "id": "1",
+      "name": "Little"
+    },
+    {
+      "id": "2",
+      "name": "Medium"
+    },
+    {
+      "id": "3",
+      "name": "Large"
+    },
+    {
+      "id": "4",
+      "name": "Premium"
+    },
+    {
+      "id": "5",
+      "name": "Minivan"
+    },
+    {
+      "id": "6",
+      "name": "SUVs"
+    }
+  ],
+  "carCategoryCars": [
+    {
+      "id": "1",
+      "carId": "1",
+      "categoryCar": "2"
+    },
+    {
+      "id": "2",
+      "carId": "2",
+      "categoryCar": "2"
+    }
+  ],
+  "rents": [
+    {
+      "id": "1",
+      "startDate": "13/9/2021",
+      "finishDate": "15/9/2021",
+      "carId": "2",
+      "clientId": "1",
+      "paymentAmount": 180,
+      "rate": 0
+    },
+    {
+      "id": "c7496d20-350d-45d6-bfee-26b3c283a36b",
+      "startDate": "22/10/2021",
+      "finishDate": "31/10/2021",
+      "carId": "1",
+      "clientId": "2",
+      "paymentAmount": 270,
+      "rate": 3
+    },
+    {
+      "id": "07e1bde6-56fe-4d46-a156-c470d6385aec",
+      "startDate": "28/10/2021",
+      "finishDate": "31/10/2021",
+      "carId": "1",
+      "clientId": "2",
+      "paymentAmount": 180,
+      "rate": 0,
+      "endDate": "31/10/2021"
+    },
+    {
+      "id": "4b170e52-cc84-4346-9e70-9bdf4e2458fe",
+      "startDate": "27/10/2021",
+      "finishDate": "31/10/2021",
+      "carId": "1",
+      "clientId": "1",
+      "paymentAmount": 225,
+      "rate": 0
+    }
+  ],
+  "plans": [
+    {
+      "id": "1",
+      "name": "Regular",
+      "benefits": [
+        "Rent one car",
+        "Custom statistics"
+      ],
+      "price": 20
+    },
+    {
+      "id": "2",
+      "name": "Silver",
+      "benefits": [
+        "Rent three cars",
+        "Custom statistics"
+      ],
+      "price": 40
+    },
+    {
+      "id": "3",
+      "name": "Gold",
+      "benefits": [
+        "Rent up to ten cars",
+        "Custom statistics",
+        "Fault record",
+        "Reminders"
+      ],
+      "price": 60
+    }
+  ],
+  "clientPlan": [
+    {
+      "id": "1",
+      "planId": "1",
+      "clientId": "1"
+    },
+    {
+      "id": "2",
+      "planId": "2",
+      "clientId": "2"
+    },
+    {
+      "id": "3",
+      "planId": "3",
+      "clientId": "3"
+    }
+  ],
+  "favourites": [
+    {
+      "carId": "4",
+      "clientId": "2",
+      "id": "00aa51fd-ea8d-4c10-ad8a-5afb27f06b83"
+    },
+    {
+      "carId": "4",
+      "clientId": "1",
+      "id": "149b3fbd-c8c3-4091-9e06-3de46376e19d"
+    },
+    {
+      "carId": "1",
+      "clientId": "1",
+      "id": "dbf567db-3bff-4fce-8152-f625fdebd70c"
+    }
+  ]
+}
