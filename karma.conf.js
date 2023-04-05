@@ -25,7 +25,7 @@ module.exports = function (config) {
       suppressAll: true // removes the duplicated traces
     },
     coverageReporter: {
-      dir: require('path').join(__dirname, './coverage/ERentACar'),
+      dir: require('path').join(__dirname, './coverage/frontend-web-application-erentcar'),
       subdir: '.',
       reporters: [
         { type: 'html' },
