@@ -4,12 +4,14 @@ import {Observable, throwError} from "rxjs";
 import {catchError, retry} from "rxjs/operators";
 import {Plan} from "../model/plan";
 import {Rent} from "../../search-car/model/rent";
+import {environment} from "../../../environments/environment";
 
 @Injectable({
   providedIn: 'root'
 })
 export class PlansService {
-  basePath = "http://localhost:8080/api/v1/plans"
+  basePath = "https://tsp-grupo2-erentcar-backend-production.up.railway.app/api/v1/plans"
+  //basePath = environment.baseUrlService+"/api/v1/plans"
 
   httpOptions = {
     headers: new HttpHeaders({

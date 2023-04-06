@@ -15,15 +15,13 @@ const httpOptions = {
 export class AuthService {
   constructor(private http: HttpClient) { }
   login(credentials: any): Observable<any> {
-    return this.http.post("http://localhost:8080/api/v1/users/auth/" + 'sign-in', {
-    //return this.http.post("https://erentcar-evo.herokuapp.com/api/v1/users/auth/" + 'sign-in', {
+    return this.http.post("https://tsp-grupo2-erentcar-backend-production.up.railway.app/api/v1/users/auth/" + 'sign-in', {
       username: credentials.username,
       password: credentials.password
     }, httpOptions);
   }
   register(user: any): Observable<any> {
-    return this.http.post("http://localhost:8080/api/v1/users/auth/" + 'sign-up', {
-    //return this.http.post("https://erentcar-evo.herokuapp.com/api/v1/users/auth/" + 'sign-up', {
+    return this.http.post("https://tsp-grupo2-erentcar-backend-production.up.railway.app/api/v1/users/auth/" + 'sign-up', {
       username: user.username,
       email: user.email,
       password: user.password

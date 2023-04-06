@@ -4,12 +4,14 @@ import {Observable, throwError} from "rxjs";
 import {Car} from "../model/car";
 import {newCar} from "../model/new-car";
 import {catchError, retry} from "rxjs/operators";
+import {environment} from "../../../environments/environment";
 
 @Injectable({
   providedIn: 'root'
 })
 export class CarsService {
-  basePath = "http://localhost:8080/api/v1/cars";
+  basePath = "https://tsp-grupo2-erentcar-backend-production.up.railway.app/api/v1/cars"
+  //basePath = environment.baseUrlService+"/api/v1/cars";
 
   httpOptions = {
     headers: new HttpHeaders({

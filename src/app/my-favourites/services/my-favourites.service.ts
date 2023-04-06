@@ -4,12 +4,13 @@ import {HttpClient, HttpErrorResponse, HttpHeaders} from "@angular/common/http";
 import {Observable, throwError} from "rxjs";
 import {catchError, retry} from "rxjs/operators";
 import {MyFavourites} from "../model/my-favourites";
+import {environment} from "../../../environments/environment";
 
 @Injectable({
   providedIn: 'root'
 })
 export class MyFavouritesService {
-  basePath = "http://localhost:8080/api/v1/favourites"
+  basePath = "https://tsp-grupo2-erentcar-backend-production.up.railway.app/api/v1/favourites"
 
   httpOptions = {
     headers: new HttpHeaders({
