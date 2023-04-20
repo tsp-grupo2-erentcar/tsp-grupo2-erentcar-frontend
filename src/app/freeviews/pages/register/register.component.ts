@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {UntypedFormBuilder, UntypedFormGroup, Validators} from "@angular/forms";
 import {ClientService} from "../../../my-profile/services/client.service";
 import {MatStepper} from "@angular/material/stepper";
 import {AuthService} from "../../../api/auth.service";
@@ -11,11 +11,11 @@ import {AuthService} from "../../../api/auth.service";
 })
 export class RegisterComponent implements OnInit {
   showPassword: Boolean = false;
-  userNameAndPasswordForm: FormGroup;
-  personalInformationForm: FormGroup;
+  userNameAndPasswordForm: UntypedFormGroup;
+  personalInformationForm: UntypedFormGroup;
   errorMessage = '';
 
-  constructor(private formBuilder: FormBuilder,
+  constructor(private formBuilder: UntypedFormBuilder,
               private clientService: ClientService,
               private authService: AuthService) {
       this.userNameAndPasswordForm = this.formBuilder.group({

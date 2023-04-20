@@ -1,7 +1,7 @@
 import {Component, Inject, OnInit} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
 import {Car} from "../../model/car";
-import {FormControl, FormGroup} from "@angular/forms";
+import {UntypedFormControl, UntypedFormGroup} from "@angular/forms";
 import { v4 as uuid } from 'uuid';
 import {RentCarService} from "../../services/rent-car.service";
 import {MatSnackBar} from "@angular/material/snack-bar";
@@ -17,7 +17,7 @@ export interface DialogData {
   styleUrls: ['./rent-dialog.component.css']
 })
 export class RentDialogComponent implements OnInit {
-  date: FormGroup;
+  date: UntypedFormGroup;
   today: Date;
 
   constructor(public dialogRef: MatDialogRef<RentDialogComponent>,
@@ -29,9 +29,9 @@ export class RentDialogComponent implements OnInit {
     const month = this.today.getMonth();
     const year = this.today.getFullYear();
 
-    this.date = new FormGroup({
-      start: new FormControl(new Date(year, month, day)),
-      end: new FormControl(new Date(year, month, day))
+    this.date = new UntypedFormGroup({
+      start: new UntypedFormControl(new Date(year, month, day)),
+      end: new UntypedFormControl(new Date(year, month, day))
     });
   }
 

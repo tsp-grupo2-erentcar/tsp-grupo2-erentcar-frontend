@@ -3,7 +3,7 @@ import {CarsService} from "../../services/cars.service";
 import {Car} from "../../model/car";
 import {BreakpointObserver} from "@angular/cdk/layout";
 import {MatDrawer} from "@angular/material/sidenav";
-import {FormGroup, FormControl} from "@angular/forms";
+import {UntypedFormGroup, UntypedFormControl} from "@angular/forms";
 import {CarModelsService} from "../../services/car-models.service";
 import {CarBrandsService} from "../../services/car-brands.service";
 
@@ -21,7 +21,7 @@ export class SearchCarComponent implements OnInit {
   categoriesOfCars: string[] = ["Little", "Medium", "Large", "Premium", "Minivan", "SUVs"];
   carsData: Car[];
   clientId: string | null;
-  date: FormGroup;
+  date: UntypedFormGroup;
   today: Date;
 
   @ViewChild(MatDrawer) drawer!: MatDrawer;
@@ -38,9 +38,9 @@ export class SearchCarComponent implements OnInit {
     const month = this.today.getMonth();
     const year = this.today.getFullYear();
 
-    this.date = new FormGroup({
-      start: new FormControl(new Date(year, month, day)),
-      end: new FormControl(new Date(year, month, day))
+    this.date = new UntypedFormGroup({
+      start: new UntypedFormControl(new Date(year, month, day)),
+      end: new UntypedFormControl(new Date(year, month, day))
     });
   }
 
