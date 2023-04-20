@@ -11,7 +11,8 @@ import {environment} from "../../../environments/environment";
 })
 export class SocialService {
 
-  basePath = "https://tsp-grupo2-erentcar-backend-production.up.railway.app/api/v1/clientSocialNetworks";
+  //basePath = "https://tsp-grupo2-erentcar-backend-production.up.railway.app/api/v1/clientSocialNetworks";
+  basePath = environment.baseUrlService + "api/v1/clientSocialNetworks";
 
   httpOptions = {
     headers: new HttpHeaders({

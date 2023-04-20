@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  baseUrlService: "https://tsp-grupo2-erentcar-backend-production.up.railway.app"
+  //baseUrlService: "https://tsp-grupo2-erentcar-backend-production.up.railway.app"
+  baseUrlService: "http://localhost:8080/"
 };
 
 /*
