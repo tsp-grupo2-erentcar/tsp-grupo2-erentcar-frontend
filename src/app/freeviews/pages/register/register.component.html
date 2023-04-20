@@ -4,14 +4,14 @@
     <form class="d-flex flex-column mx-auto" [formGroup]="userNameAndPasswordForm">
       <ng-template matStepLabel>Username and password</ng-template>
       <mat-form-field appearance="fill">
-        <mat-label>Username</mat-label>
+        <p>Username</p>
         <input matInput formControlName="userName">
         <div *ngIf="userNameAndPasswordForm.get('userName')?.errors && userNameAndPasswordForm.get('userName')?.dirty">
           <mat-error *ngIf="userNameAndPasswordForm.get('userName')?.hasError('required')">Required</mat-error>
         </div>
       </mat-form-field>
       <mat-form-field appearance="fill">
-        <mat-label>Email</mat-label>
+        <p>Email</p>
         <input matInput formControlName="email">
         <div *ngIf="userNameAndPasswordForm.get('email')?.errors && userNameAndPasswordForm.get('email')?.dirty">
           <mat-error *ngIf="userNameAndPasswordForm.get('email')?.hasError('required')">Required</mat-error>
@@ -19,7 +19,7 @@
         </div>
       </mat-form-field>
       <mat-form-field appearance="fill">
-        <mat-label>Password</mat-label>
+        <p>Password</p>
         <input
           matInput
           name="password" [type]="showPassword ? 'text' : 'password'"
@@ -64,7 +64,7 @@
           maxlength="30"
           formControlName="names"
         >
-        <mat-hint align="end">{{ inputNames.value?.length || 0 }}/30</mat-hint>
+        <mat-hint align="end">{{ inputNames.value.length || 0 }}/30</mat-hint>
         <div *ngIf="personalInformationForm.get('names')?.errors && personalInformationForm.get('names')?.dirty">
           <mat-error *ngIf="personalInformationForm.get('names')?.hasError('required')">Required</mat-error>
           <mat-error *ngIf="personalInformationForm.get('names')?.hasError('maxLength')">Max 30 characters</mat-error>
@@ -82,7 +82,7 @@
           maxlength="30"
           formControlName="lastNames"
         >
-        <mat-hint align="end">{{ inputLastNames.value?.length || 0 }}/30</mat-hint>
+        <mat-hint align="end">{{ inputLastNames.value.length || 0 }}/30</mat-hint>
         <div *ngIf="personalInformationForm.get('lastNames')?.errors && personalInformationForm.get('lastNames')?.dirty">
           <mat-error *ngIf="personalInformationForm.get('lastNames')?.hasError('required')">Required</mat-error>
           <mat-error *ngIf="personalInformationForm.get('lastNames')?.hasError('maxLength')">Max 30 characters</mat-error>
@@ -100,7 +100,7 @@
           maxlength="50"
           formControlName="address"
         >
-        <mat-hint align="end">{{ inputAddress.value?.length || 0 }}/50</mat-hint>
+        <mat-hint align="end">{{ inputAddress.value.length || 0 }}/50</mat-hint>
         <div *ngIf="personalInformationForm.get('address')?.errors && personalInformationForm.get('address')?.dirty">
           <mat-error *ngIf="personalInformationForm.get('address')?.hasError('required')">Required</mat-error>
           <mat-error *ngIf="personalInformationForm.get('address')?.hasError('maxLength')">Max 50 characters</mat-error>
@@ -114,7 +114,7 @@
           maxlength="9"
           formControlName="cellphoneNumber"
         >
-        <mat-hint align="end">{{ inputCellphoneNumber.value?.length || 0 }}/9</mat-hint>
+        <mat-hint align="end">{{ inputCellphoneNumber.value.length || 0 }}/9</mat-hint>
         <div *ngIf="personalInformationForm.get('cellphoneNumber')?.errors && personalInformationForm.get('cellphoneNumber')?.dirty">
           <mat-error *ngIf="personalInformationForm.get('cellphoneNumber')?.hasError('required')">Required</mat-error>
           <mat-error *ngIf="personalInformationForm.get('cellphoneNumber')?.hasError('pattern')">Invalid cellphone number</mat-error>

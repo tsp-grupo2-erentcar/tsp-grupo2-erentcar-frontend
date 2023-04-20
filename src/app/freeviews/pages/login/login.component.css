@@ -10,7 +10,11 @@
   display: flex;
   flex-direction: column;
 }
-
+input{
+  background-color: rgb(204, 204, 230);
+  border: 2px solid gray;
+  border-radius: 4px;
+}
 #wrong-email-and-password {
   color: red;
 }
@@ -40,4 +44,7 @@
   max-height: 200px;
   background-repeat: no-repeat;
   background-size: cover;
+}
+input[type=text]:focus {
+  background-color: lightblue;
 }
