@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RentCarService } from "../../../search-car/services/rent-car.service";
-import {MatDialog} from "@angular/material/dialog";
+import {MatLegacyDialog as MatDialog} from "@angular/material/legacy-dialog";
 import {DeleteDialogComponent} from "../delete-dialog/delete-dialog.component";
 import {EditDateDialogComponent} from "../edit-date-dialog/edit-date-dialog.component";
 import {Rent} from "../../../search-car/model/rent";

@@ -1,6 +1,6 @@
 import {Component, EventEmitter, Inject, OnInit, Optional, Output} from '@angular/core';
 import {Car} from "../../../search-car/model/car";
-import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
+import {MAT_LEGACY_DIALOG_DATA as MAT_DIALOG_DATA, MatLegacyDialogRef as MatDialogRef} from "@angular/material/legacy-dialog";
 import {FormControl} from "@angular/forms";
 import {CarsService} from "../../../search-car/services/cars.service";
 import {CarBrandsService} from "../../../search-car/services/car-brands.service";

@@ -1,5 +1,5 @@
 import {EventEmitter, Component, OnInit, Output, Optional, Inject} from '@angular/core';
-import {MAT_DIALOG_DATA} from "@angular/material/dialog";
+import {MAT_LEGACY_DIALOG_DATA as MAT_DIALOG_DATA} from "@angular/material/legacy-dialog";
 import {CarBrandsService} from "../../../search-car/services/car-brands.service";
 import {CarsService} from "../../../search-car/services/cars.service";
 export interface dataClient{
