@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Client} from "../../model/client";
 import {Car} from "../../../search-car/model/car";
 import {Language} from "../../model/language";
-import {MatLegacyDialog as MatDialog} from "@angular/material/legacy-dialog";
+import {MatDialog as MatDialog} from "@angular/material/dialog";
 import {Router} from "@angular/router";
 
 @Component({
