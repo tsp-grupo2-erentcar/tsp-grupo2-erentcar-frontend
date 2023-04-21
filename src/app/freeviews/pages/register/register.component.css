@@ -1,7 +1,14 @@
 form {
   max-width: 1000px;
 }
-
+input{
+  background-color: rgb(204, 204, 230);
+  border: 2px solid gray;
+  border-radius: 4px;
+}
+input[type=text]:focus {
+  background-color: lightblue;
+}
 .mx-auto {
   margin: 0 auto 0;
 }
