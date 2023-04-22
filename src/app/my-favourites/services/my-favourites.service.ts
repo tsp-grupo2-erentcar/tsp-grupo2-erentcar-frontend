@@ -10,8 +10,8 @@ import {environment} from "../../../environments/environment";
   providedIn: 'root'
 })
 export class MyFavouritesService {
-  //basePath = "https://tsp-grupo2-erentcar-backend-production.up.railway.app/api/v1/favourites"
-  basePath = environment.baseUrlService + "api/v1/favourites"
+  basePath = "https://tsp-grupo2-erentcar-backend-production.up.railway.app/api/v1/favourites"
+  //basePath = environment.baseUrlService + "api/v1/favourites"
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type':'application/json'

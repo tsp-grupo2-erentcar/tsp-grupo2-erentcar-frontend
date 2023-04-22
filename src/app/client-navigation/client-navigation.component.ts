@@ -35,6 +35,7 @@ export class ClientNavigationComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    console.log(localStorage.getItem("clientId"));
     //this.getClient();
     this.isLoggedIn = !!this.tokenStorageService.getToken();
     if (this.isLoggedIn) {
