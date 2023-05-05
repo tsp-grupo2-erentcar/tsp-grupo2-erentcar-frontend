@@ -1,7 +1,6 @@
 {
   "hosting": {
-    "site": "tsp-erentcar-12982",
-    "public": "dist/frontend-web-application-erentcar",
+    "public": "dist",
     "ignore": [
       "firebase.json",
       "**/.*",
