@@ -1,5 +1,5 @@
 import {EventEmitter, Component, OnInit, Output, Optional, Inject} from '@angular/core';
-import {MAT_DIALOG_DATA} from "@angular/material/dialog";
+import {MAT_DIALOG_DATA as MAT_DIALOG_DATA} from "@angular/material/dialog";
 import {CarBrandsService} from "../../../search-car/services/car-brands.service";
 import {CarsService} from "../../../search-car/services/cars.service";
 export interface dataClient{
@@ -63,13 +63,14 @@ export class AddCarDialogComponent implements OnInit {
     })
   }
   addClick(){
+    console.log("entro al botón data")
     let data={
       address:this.address,
       year:Number(this.year),
       mileage:Number(this.mileage),
       seating:Number(this.seating),
-      manual:this.type,
-      rate: 0,
+      manual:this.type.valueOf(),
+      //rate: 0,
       carValueInDollars:Number(this.carValueInDollars),
       extraInformation:this.extraInformation,
       rentAmountDay:Number(this.rentAmountDay),
@@ -77,8 +78,10 @@ export class AddCarDialogComponent implements OnInit {
       category:this.category,
       mechanicCondition:this.mechanicCondition
     }
+    console.log("Esta es la data a enviar")
     console.log(data)
     this.carService.create(this.clientId,this.modelId,data).subscribe(response=>{
+      console.log("este es el response")
       console.log(response)
     })
     this.submitClicked.emit("a");

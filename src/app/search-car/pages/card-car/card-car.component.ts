@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Car} from "../../model/car";
 import {Router} from "@angular/router";
-import {MatDialog} from "@angular/material/dialog";
+import {MatDialog as MatDialog} from "@angular/material/dialog";
 import {RentDialogComponent} from "../rent-dialog/rent-dialog.component";
 
 @Component({

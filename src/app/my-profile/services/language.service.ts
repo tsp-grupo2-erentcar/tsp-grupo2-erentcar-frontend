@@ -4,12 +4,14 @@ import {Observable, throwError} from "rxjs";
 import {Comment} from "../model/comment";
 import {catchError, retry} from "rxjs/operators";
 import {Language} from "../model/language";
+import {environment} from "../../../environments/environment";
 
 @Injectable({
   providedIn: 'root'
 })
 export class LanguageService {
-  basePath = "http://localhost:8080/api/v1/clientLanguages";
+  //basePath = "https://tsp-grupo2-erentcar-backend-production.up.railway.app/api/v1/clientLanguages";
+  basePath = environment.baseUrlService + "api/v1/clientLanguages";
 
   httpOptions = {
     headers: new HttpHeaders({

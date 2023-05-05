@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {UntypedFormBuilder, UntypedFormGroup, Validators} from "@angular/forms";
 import {ClientService} from "../../../my-profile/services/client.service";
 import {AuthService} from "../../../api/auth.service";
 import {TokenStorageService} from "../../../api/token-storage.service";
@@ -11,7 +11,7 @@ import {TokenStorageService} from "../../../api/token-storage.service";
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  form: FormGroup;
+  form: UntypedFormGroup;
   wrongEmailOrPassword: Boolean = false;
   showPassword: Boolean = false;
 
@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
   clientId!: string | null;
 
   constructor(private router: Router,
-              private formBuilder: FormBuilder,
+              private formBuilder: UntypedFormBuilder,
               private clientService: ClientService,
               private authService: AuthService,
               private tokenStorageService: TokenStorageService,

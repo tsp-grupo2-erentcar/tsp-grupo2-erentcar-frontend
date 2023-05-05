@@ -4,13 +4,15 @@ import {Observable, throwError} from "rxjs";
 import {Language} from "../model/language";
 import {catchError, retry} from "rxjs/operators";
 import {Social} from "../model/social";
+import {environment} from "../../../environments/environment";
 
 @Injectable({
   providedIn: 'root'
 })
 export class SocialService {
 
-  basePath = "http://localhost:8080/api/v1/clientSocialNetworks";
+  //basePath = "https://tsp-grupo2-erentcar-backend-production.up.railway.app/api/v1/clientSocialNetworks";
+  basePath = environment.baseUrlService + "api/v1/clientSocialNetworks";
 
   httpOptions = {
     headers: new HttpHeaders({

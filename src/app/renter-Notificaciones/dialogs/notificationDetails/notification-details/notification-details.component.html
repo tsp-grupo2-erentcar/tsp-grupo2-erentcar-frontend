@@ -1,0 +1,17 @@
+<mat-card class="car-card">
+    <mat-card-header>
+      <mat-card-title>Modelo:{{car.carModel.name}}</mat-card-title>
+    </mat-card-header>
+    <img mat-card-image [src]="car.imagePath" alt="Car Image">
+    <mat-card-content>
+      <p>{{car.extraInformation}}</p>
+      <p>Price per day: ${{car.rentAmountDay}}</p>
+      <p>Solicitante: Juan Perez</p>
+      <p>Date: 12/12/23 to 12/12/23</p>
+    </mat-card-content>
+    <mat-card-actions class="actions">
+      <button mat-button color="primary" (click)="onAcceptClick()">Accept</button>
+      <button mat-button color="warn" (click)="onDeclineClick()">Decline</button>
+    </mat-card-actions>
+  </mat-card>
+  

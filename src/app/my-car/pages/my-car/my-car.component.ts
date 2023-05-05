@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {Car} from "../../../search-car/model/car";
 import {ClientService} from "../../../my-profile/services/client.service";
-import {MatDialog} from "@angular/material/dialog";
+import {MatDialog as MatDialog} from "@angular/material/dialog";
 import {EditCarDialogComponent} from "../edit-car-dialog/edit-car-dialog.component";
 import {CarsService} from "../../../search-car/services/cars.service";
 import {CarModelsService} from "../../../search-car/services/car-models.service";

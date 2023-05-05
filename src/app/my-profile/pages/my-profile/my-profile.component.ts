@@ -2,8 +2,9 @@ import {Component, OnInit} from '@angular/core';
 import {Client} from "../../model/client";
 import {Car} from "../../../search-car/model/car";
 import {Language} from "../../model/language";
-import {MatDialog} from "@angular/material/dialog";
+import {MatDialog as MatDialog} from "@angular/material/dialog";
 import {Router} from "@angular/router";
+import {EditProfileComponent, DialogProfileData } from '../edit-profile/edit-profile.component';
 
 @Component({
   selector: 'app-my-profile',
@@ -16,7 +17,7 @@ export class MyProfileComponent implements OnInit {
   clientLanguages !: Language[];
   breakpoint: number;
 
-  constructor(public editProfile: MatDialog,
+  constructor(public dialog: MatDialog,
               private router: Router) {
     this.client = JSON.parse(localStorage.getItem("clientInfo") || "{}");
     this.breakpoint = (window.innerWidth <= 900) ? 1 : 2;
@@ -26,6 +27,21 @@ export class MyProfileComponent implements OnInit {
 
   handleSize(event: Event) {
     this.breakpoint = (window.innerWidth <= 900) ? 1 : 2;
+  }
+  openEditProfile(): void {
+    const dialogRef = this.dialog.open(EditProfileComponent, {
+      width: "400px",
+      data: {
+        clientId: localStorage.getItem('clientId'),
+        client : JSON.parse(localStorage.getItem("clientInfo") || "{}"),
+      }
+    });
+
+    dialogRef.afterClosed().subscribe((response: any) => {
+      if (response !== undefined) {
+        console.log("Worked!");
+      }
+    })
   }
 
   getMoreInformationCarUrl(carId: number) {

@@ -3,7 +3,7 @@ import {ActivatedRoute} from "@angular/router";
 import {CarsService} from "../../../search-car/services/cars.service";
 import {Car} from "../../../search-car/model/car";
 import {Location} from "@angular/common";
-import {MatDialog} from "@angular/material/dialog";
+import {MatDialog as MatDialog} from "@angular/material/dialog";
 import {RentDialogComponent} from "../../../search-car/pages/rent-dialog/rent-dialog.component";
 import {MyFavouritesService} from "../../../my-favourites/services/my-favourites.service";
 import {CarModelsService} from "../../../search-car/services/car-models.service";

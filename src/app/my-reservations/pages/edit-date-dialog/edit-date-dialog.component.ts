@@ -1,7 +1,7 @@
 import {Component, Inject, OnInit} from '@angular/core';
 //import {RentsService} from "../../services/rents.service";
-import {MAT_DIALOG_DATA} from "@angular/material/dialog";
-import {FormControl, FormGroup} from "@angular/forms";
+import {MAT_DIALOG_DATA as MAT_DIALOG_DATA} from "@angular/material/dialog";
+import {UntypedFormControl, UntypedFormGroup} from "@angular/forms";
 
 export interface DialogData {
   id: string,
@@ -17,7 +17,7 @@ export interface DialogData {
   styleUrls: ['./edit-date-dialog.component.css']
 })
 export class EditDateDialogComponent implements OnInit {
-  date: FormGroup;
+  date: UntypedFormGroup;
   formattedStartDate: any;
   formattedFinishDate: any;
   tempArrayStart: any;
@@ -33,9 +33,9 @@ export class EditDateDialogComponent implements OnInit {
     this.tempArrayFinish = this.data.end.split('/');
     this.formattedFinishDate = new Date(this.tempArrayFinish[2],this.tempArrayFinish[1] - 1, this.tempArrayFinish[0]);
 
-    this.date = new FormGroup({
-      start: new FormControl(this.formattedStartDate),
-      end: new FormControl(this.formattedFinishDate)
+    this.date = new UntypedFormGroup({
+      start: new UntypedFormControl(this.formattedStartDate),
+      end: new UntypedFormControl(this.formattedFinishDate)
     });
   }
 

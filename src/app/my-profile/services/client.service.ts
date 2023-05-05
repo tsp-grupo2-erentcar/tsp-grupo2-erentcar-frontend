@@ -4,14 +4,16 @@ import {Observable, throwError} from "rxjs";
 import {Client} from "../model/client";
 import {catchError, retry} from "rxjs/operators";
 import {Car} from "../../search-car/model/car";
+import {environment} from "../../../environments/environment";
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class ClientService {
-  //basePath = "https://erentcar-evo.herokuapp.com/api/v1/clients";
-  basePath = "http://localhost:8080/api/v1/clients";
+
+  //basePath = "https://tsp-grupo2-erentcar-backend-production.up.railway.app/api/v1/clients";
+  basePath = environment.baseUrlService + "api/v1/clients";
   httpOptions = {
     headers: new HttpHeaders({
       "Content-Type": "application/json"

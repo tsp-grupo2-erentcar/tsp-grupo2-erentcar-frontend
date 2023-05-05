@@ -22,6 +22,7 @@ export class ClientNavigationComponent implements OnInit {
     { name: "Reservations", url: 'reservations' },
     { name: "My cars", url: 'my-car' },
     { name: "Rentals", url: 'rentals' },
+    { name: "Notifications", url: 'notifications'},
     { name: "My Favourites", url: 'favourites' },
     { name: "Subscription", url: 'subscription' },
     { name: "My Profile", url: 'profile'}

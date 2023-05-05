@@ -14,28 +14,28 @@ import { SubscriptionComponent } from './subscription/pages/subscription/subscri
 import { AppRoutingModule } from './app-routing.module';
 import {MatDividerModule} from "@angular/material/divider";
 import {MatGridListModule} from "@angular/material/grid-list";
-import {MatInputModule} from "@angular/material/input";
+import {MatInputModule as MatInputModule} from "@angular/material/input";
 import { CardCarComponent } from './search-car/pages/card-car/card-car.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms"
 import { ClientNavigationComponent } from './client-navigation/client-navigation.component';
 import {MatToolbarModule} from "@angular/material/toolbar";
 import {MatSidenavContainer, MatSidenavModule} from "@angular/material/sidenav";
-import {MatCheckboxModule} from "@angular/material/checkbox";
-import {MatFormFieldModule} from "@angular/material/form-field";
-import {MatCardModule} from "@angular/material/card";
+import {MatCheckboxModule as MatCheckboxModule} from "@angular/material/checkbox";
+import {MatFormFieldModule as MatFormFieldModule} from "@angular/material/form-field";
+import {MatCardModule as MatCardModule} from "@angular/material/card";
 import {MatButtonModule} from "@angular/material/button";
-import {MatListModule} from "@angular/material/list";
+import {MatListModule as MatListModule} from "@angular/material/list";
 import {MatIconModule} from "@angular/material/icon";
-import {MatMenuModule} from "@angular/material/menu";
+import {MatMenuModule as MatMenuModule} from "@angular/material/menu";
 import { MyProfileComponent } from './my-profile/pages/my-profile/my-profile.component';
 import { RentDialogComponent } from './search-car/pages/rent-dialog/rent-dialog.component';
-import {MatDialogModule} from "@angular/material/dialog";
+import {MatDialogModule as MatDialogModule, MAT_DIALOG_DATA as MAT_DIALOG_DATA} from "@angular/material/dialog";
 import {MatDatepickerModule} from "@angular/material/datepicker";
 import {MAT_DATE_LOCALE, MatNativeDateModule} from "@angular/material/core";
-import {MatSnackBarModule} from "@angular/material/snack-bar";
+import {MatSnackBarModule as MatSnackBarModule} from "@angular/material/snack-bar";
 import { CardMyCarComponent } from './my-car/pages/card-my-car/card-my-car.component';
 import { EditCarDialogComponent} from "./my-car/pages/edit-car-dialog/edit-car-dialog.component";
-import {MatRadioModule} from "@angular/material/radio";
+import {MatRadioModule as MatRadioModule} from "@angular/material/radio";
 import { CardMySubscriptionComponent } from './subscription/pages/card-my-subscription/card-my-subscription.component';
 import { ShowPlansComponent } from './subscription/pages/show-plans/show-plans.component';
 
@@ -52,8 +52,8 @@ import {LoginComponent} from "./freeviews/pages/login/login.component";
 import { RegisterComponent } from './freeviews/pages/register/register.component';
 import { FreeviewComponent } from './freeviews/pages/freeview/freeview.component';
 import {MatStepperModule} from "@angular/material/stepper";
-import {MatTableModule} from "@angular/material/table";
-import {MatPaginatorModule} from "@angular/material/paginator";
+import {MatTableModule as MatTableModule} from "@angular/material/table";
+import {MatPaginatorModule as MatPaginatorModule} from "@angular/material/paginator";
 import { DeleteDialogComponent } from './my-reservations/pages/delete-dialog/delete-dialog.component';
 import { EditDateDialogComponent } from './my-reservations/pages/edit-date-dialog/edit-date-dialog.component';
 import { EditProfileComponent } from './my-profile/pages/edit-profile/edit-profile.component';
@@ -61,6 +61,8 @@ import {authInterceptorProviders} from "./api/auth-interceptor.service";
 import { LogoutComponent } from './api/logout/logout.component';
 import { RegisterApiComponent } from './api/register/register-api.component';
 import { AddCarDialogComponent } from './my-car/pages/add-car-dialog/add-car-dialog.component';
+import { RenterNotificationsComponent } from './renter-Notificaciones/Pages/renter-notifications/renter-notifications.component';
+import { NotificationDetailsComponent } from './renter-Notificaciones/dialogs/notificationDetails/notification-details/notification-details.component';
 
 @NgModule({
   declarations: [
@@ -95,7 +97,9 @@ import { AddCarDialogComponent } from './my-car/pages/add-car-dialog/add-car-dia
     EditProfileComponent,
     LogoutComponent,
     RegisterApiComponent,
-    AddCarDialogComponent
+    AddCarDialogComponent,
+    RenterNotificationsComponent,
+    NotificationDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -128,6 +132,9 @@ import { AddCarDialogComponent } from './my-car/pages/add-car-dialog/add-car-dia
   providers: [{
     provide: MAT_DATE_LOCALE,
     useValue: 'en-GB',
+  },{
+    provide: MAT_DIALOG_DATA,
+    useValue: '',
   }, authInterceptorProviders],
   bootstrap: [AppComponent]
 })
