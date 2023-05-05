@@ -10,8 +10,8 @@ import {environment} from "../../../environments/environment";
   providedIn: 'root'
 })
 export class CarsService {
-  //basePath = "https://tsp-grupo2-erentcar-backend-production.up.railway.app/api/v1/cars"
-  basePath = environment.baseUrlService+"api/v1/cars";
+  basePath = "https://tsp-grupo2-erentcar-backend-production.up.railway.app/api/v1/cars"
+  //basePath = environment.baseUrlService+"api/v1/cars";
 
   httpOptions = {
     headers: new HttpHeaders({

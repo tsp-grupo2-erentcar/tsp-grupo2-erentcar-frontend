@@ -10,7 +10,7 @@ import {environment} from "../../../environments/environment";
 })
 export class CarBrandsService {
   //basePath = "https://tsp-grupo2-erentcar-backend-production.up.railway.app/api/v1/car-brands";
-  basePath = environment.baseUrlService + "api/v1/car-brands";
+  basePath = 'https://tsp-grupo2-erentcar-backend-production.up.railway.app/' + "api/v1/car-brands";
   httpOptions = {
     headers: new HttpHeaders({
       "Content-Type": "application/json"
