@@ -61,6 +61,8 @@ import {authInterceptorProviders} from "./api/auth-interceptor.service";
 import { LogoutComponent } from './api/logout/logout.component';
 import { RegisterApiComponent } from './api/register/register-api.component';
 import { AddCarDialogComponent } from './my-car/pages/add-car-dialog/add-car-dialog.component';
+import { RenterNotificationsComponent } from './renter-Notificaciones/Pages/renter-notifications/renter-notifications.component';
+import { NotificationDetailsComponent } from './renter-Notificaciones/dialogs/notificationDetails/notification-details/notification-details.component';
 
 @NgModule({
   declarations: [
@@ -95,7 +97,9 @@ import { AddCarDialogComponent } from './my-car/pages/add-car-dialog/add-car-dia
     EditProfileComponent,
     LogoutComponent,
     RegisterApiComponent,
-    AddCarDialogComponent
+    AddCarDialogComponent,
+    RenterNotificationsComponent,
+    NotificationDetailsComponent
   ],
   imports: [
     BrowserModule,

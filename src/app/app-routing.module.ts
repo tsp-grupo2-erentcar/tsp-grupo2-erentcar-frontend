@@ -14,7 +14,7 @@ import {AboutComponent} from "./freeviews/pages/about/about.component";
 import {LoginComponent} from "./freeviews/pages/login/login.component";
 import {RegisterComponent} from "./freeviews/pages/register/register.component";
 import {FreeviewComponent} from "./freeviews/pages/freeview/freeview.component";
-
+import { RenterNotificationsComponent } from './renter-Notificaciones/Pages/renter-notifications/renter-notifications.component';
 const routes: Routes = [
   {
     path: '',
@@ -38,7 +38,8 @@ const routes: Routes = [
       {path: 'subscription', component: SubscriptionComponent},
       {path: 'profile', component: MyProfileComponent},
       {path: 'search/car/:carId', component: CarComponent},
-      {path: 'profile/car/:carId', component: CarComponent}
+      {path: 'profile/car/:carId', component: CarComponent},
+      {path: 'notifications', component: RenterNotificationsComponent}
     ]
   }
 ];
