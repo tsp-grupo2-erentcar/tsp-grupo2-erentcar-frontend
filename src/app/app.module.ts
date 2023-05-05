@@ -29,7 +29,7 @@ import {MatIconModule} from "@angular/material/icon";
 import {MatMenuModule as MatMenuModule} from "@angular/material/menu";
 import { MyProfileComponent } from './my-profile/pages/my-profile/my-profile.component';
 import { RentDialogComponent } from './search-car/pages/rent-dialog/rent-dialog.component';
-import {MatDialogModule as MatDialogModule} from "@angular/material/dialog";
+import {MatDialogModule as MatDialogModule, MAT_DIALOG_DATA as MAT_DIALOG_DATA} from "@angular/material/dialog";
 import {MatDatepickerModule} from "@angular/material/datepicker";
 import {MAT_DATE_LOCALE, MatNativeDateModule} from "@angular/material/core";
 import {MatSnackBarModule as MatSnackBarModule} from "@angular/material/snack-bar";
@@ -132,6 +132,9 @@ import { NotificationDetailsComponent } from './renter-Notificaciones/dialogs/no
   providers: [{
     provide: MAT_DATE_LOCALE,
     useValue: 'en-GB',
+  },{
+    provide: MAT_DIALOG_DATA,
+    useValue: '',
   }, authInterceptorProviders],
   bootstrap: [AppComponent]
 })
