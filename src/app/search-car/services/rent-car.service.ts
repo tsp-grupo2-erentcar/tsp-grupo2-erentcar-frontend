@@ -51,8 +51,10 @@ export class RentCarService {
   }
 
   create(clientId: any, carId: any, item: any): Observable<Rent> {
-    return this.http.post<Rent>(`${ this.basePath }/client/${ clientId }/car/${ carId }`, JSON.stringify(item), this.httpOptions)
+    console.log("Entro al servicio")
+    return this.http.post<Rent>(`${ this.basePath }?clientId=${ clientId }&carId=${ carId }`, JSON.stringify(item), this.httpOptions)
       .pipe(
+
         retry(2),
         catchError(this.handleError)
       );

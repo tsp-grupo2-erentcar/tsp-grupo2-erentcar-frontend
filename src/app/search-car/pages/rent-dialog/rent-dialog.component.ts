@@ -19,7 +19,8 @@ export interface DialogData {
 export class RentDialogComponent implements OnInit {
   date: UntypedFormGroup;
   today: Date;
-
+  monthString: string;
+  dayString: string;
   constructor(public dialogRef: MatDialogRef<RentDialogComponent>,
               @Inject(MAT_DIALOG_DATA) public data: DialogData,
               private rentCarService: RentCarService,
@@ -28,7 +29,8 @@ export class RentDialogComponent implements OnInit {
     const day = this.today.getDate();
     const month = this.today.getMonth();
     const year = this.today.getFullYear();
-
+    this.monthString = '';
+    this.dayString = '';
     this.date = new UntypedFormGroup({
       start: new UntypedFormControl(new Date(year, month, day)),
       end: new UntypedFormControl(new Date(year, month, day))
@@ -51,7 +53,17 @@ export class RentDialogComponent implements OnInit {
     const month = date.getMonth() + 1;
     const year = date.getFullYear();
 
-    return `${day}/${month}/${year}`;
+    if (month < 10){
+      this.monthString = '0' + month;
+    } else {
+      this.monthString = '' + month;
+    }
+    if (day < 10){
+      this.dayString = '0' + month;
+    } else {
+      this.dayString = '' + month;
+    }
+    return `${year}-${this.monthString}-${this.dayString}`;
   }
 
   getPaymentAmount(): number {
@@ -62,10 +74,10 @@ export class RentDialogComponent implements OnInit {
     const rent = {
       startDate: this.getDateFormat(this.date.value.start),
       finishDate: this.getDateFormat(this.date.value.end),
-      paymentAmount: this.getPaymentAmount(),
-      rate: 0
+      amount: this.getPaymentAmount(),
+      rate: 1
     }
-
+    console.log(rent);
     this.rentCarService.create(this.data.clientId, this.data.car.id, rent).subscribe((response: any) => {
       console.log(response);
     });
