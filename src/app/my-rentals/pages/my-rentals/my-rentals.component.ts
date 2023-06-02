@@ -29,7 +29,7 @@ export class MyRentalsComponent implements OnInit {
   }
 
   getRents(){
-    let aux=Number(this.clientId)-4
+    let aux=Number(this.clientId)
     this.clientId=aux.toString()
     this.clientsService.getById(this.clientId).subscribe(response=>{
       this.rents=response.rents
