@@ -52,7 +52,13 @@ export class ClientService {
         catchError(this.handleError)
       );
   }
-
+  getByUserId(id: any): Observable<any> {/*Client*/
+    return this.http.get<any>(`${this.basePath}/user/${id}`, this.httpOptions)
+      .pipe(
+        retry(2),
+        catchError(this.handleError)
+      );
+  }
   create(item: any): Observable<Client> {
     console.log(item)
     return this.http.post<Client>(this.basePath, JSON.stringify(item), this.httpOptions)
