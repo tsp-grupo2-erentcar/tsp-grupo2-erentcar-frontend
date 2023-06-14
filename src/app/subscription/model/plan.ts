@@ -3,4 +3,5 @@ export interface Plan {
   name: string;
   price: number;
   benefits: string[];
+  image: string;
 }

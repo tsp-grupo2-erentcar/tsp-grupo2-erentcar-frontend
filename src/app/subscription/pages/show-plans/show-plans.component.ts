@@ -28,5 +28,16 @@ export class ShowPlansComponent implements OnInit {
        this.updatePlanValueFromPlans(response.planId);
     });*/
   }
+  getCardColorClass(index: number): string {
+    if (index === 0) {
+      return 'gray-card';
+    } else if (index === 1) {
+      return 'blue-card';
+    } else if (index === 2) {
+      return 'golden-card';
+    } else {
+      return '';
+    }
+  }
 
 }
