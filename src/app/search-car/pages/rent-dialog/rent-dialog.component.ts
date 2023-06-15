@@ -59,9 +59,9 @@ export class RentDialogComponent implements OnInit {
       this.monthString = '' + month;
     }
     if (day < 10){
-      this.dayString = '0' + month;
+      this.dayString = '0' + day;
     } else {
-      this.dayString = '' + month;
+      this.dayString = '' + day;
     }
     return `${year}-${this.monthString}-${this.dayString}`;
   }
