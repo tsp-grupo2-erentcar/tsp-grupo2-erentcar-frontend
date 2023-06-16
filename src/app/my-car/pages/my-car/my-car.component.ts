@@ -72,6 +72,9 @@ export class MyCarComponent implements OnInit {
     dialogRef.componentInstance.submitClicked.subscribe(result=>{
       this.getCars()
     })
+    dialogRef.afterClosed().subscribe(result => {
+      this.getCars();
+    });
   }
   delete(id: number) {
     console.log(id)
