@@ -65,7 +65,7 @@
     <mat-grid-tile>
       <div id="cars-of-client" class="content">
         <h2>My cars</h2>
-        <mat-card *ngFor="let car of client.cars">
+        <mat-card *ngFor="let car of clientCars">
           <img src="{{ car.imagePath }}" alt="car image">
           <div class="car-information">
             <mat-card-title>{{ car.carModel.carBrand.name }} {{ car.carModel.name }}</mat-card-title>

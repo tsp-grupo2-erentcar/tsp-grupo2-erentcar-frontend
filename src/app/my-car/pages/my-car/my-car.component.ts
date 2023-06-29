@@ -76,10 +76,13 @@ export class MyCarComponent implements OnInit {
       this.getCars();
     });
   }
-  delete(id: number) {
+   delete(id: number) {
     console.log(id)
-    this.carsService.delete(id).subscribe();
-    this.reloadPage();
+    this.carsService.delete(id).subscribe((response)=>{
+      this.getCars();
+    });
+
+
   }
   reloadPage(): void {
     location.reload();
