@@ -5,6 +5,10 @@ import {UntypedFormControl, UntypedFormGroup} from "@angular/forms";
 import { v4 as uuid } from 'uuid';
 import {RentCarService} from "../../services/rent-car.service";
 import {MatSnackBar as MatSnackBar} from "@angular/material/snack-bar";
+import {RenterNotification} from "../../../renter-Notificaciones/models/renterNotificationModel";
+import {
+  RenterNotificationsServiceService
+} from "../../../renter-Notificaciones/services/renter-notifications-service.service";
 
 export interface DialogData {
   car: Car;
@@ -21,9 +25,16 @@ export class RentDialogComponent implements OnInit {
   today: Date;
   monthString: string;
   dayString: string;
+  notification: RenterNotification = {
+    id: 0,
+    carId: 0,
+    message:"Se ah rentado el auto correctamente",
+    tittle:"Alerta de renta",
+  }
   constructor(public dialogRef: MatDialogRef<RentDialogComponent>,
               @Inject(MAT_DIALOG_DATA) public data: DialogData,
               private rentCarService: RentCarService,
+              private notificationService: RenterNotificationsServiceService,
               private snackBar: MatSnackBar) {
     this.today = new Date();
     const day = this.today.getDate();
@@ -80,9 +91,33 @@ export class RentDialogComponent implements OnInit {
     console.log(rent);
     this.rentCarService.create(this.data.clientId, this.data.car.id, rent).subscribe((response: any) => {
       console.log(response);
+      this.addNotification();
     });
 
     this.openSnackBar();
+  }
+  addNotification() {
+    this.notification.carId = Number(this.data.car.id);
+    //this.notification.clientId = Number(this.data.clientId);
+
+    const newFav = {
+      clientId:Number(this.data.clientId),
+      carId:Number(this.data.car.id),
+      message: this.notification.message,
+      tittle: this.notification.tittle
+    }
+
+    this.notificationService.create(Number(this.data.clientId), Number(this.data.car.id), newFav).subscribe((response: any) => {
+      //this.isFavourite = true;
+      this.notification = response;
+
+      // Agregar el item al localStorage
+      let value = localStorage.getItem('clientInfo');
+      let client = typeof value === "string" ? JSON.parse(value) : "";
+      console.log(client)
+      client.notifications.push(this.notification);
+      localStorage.setItem("clientInfo", JSON.stringify(client));
+    })
   }
 
   openSnackBar() {
