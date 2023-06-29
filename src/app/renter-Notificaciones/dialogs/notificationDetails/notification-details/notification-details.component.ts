@@ -2,6 +2,8 @@ import { Component,Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { RenterNotificationsComponent } from 'src/app/renter-Notificaciones/Pages/renter-notifications/renter-notifications.component';
 import { Car } from 'src/app/search-car/model/car';
+import {RenterNotificationsServiceService} from "../../../services/renter-notifications-service.service";
+import {ClientService} from "../../../../my-profile/services/client.service";
 @Component({
   selector: 'app-notification-details',
   templateUrl: './notification-details.component.html',
@@ -9,6 +11,7 @@ import { Car } from 'src/app/search-car/model/car';
 })
 export class NotificationDetailsComponent {
   car:any;
+  client:any;
   cars: Car[] = [
     {
       id: 1,
@@ -96,14 +99,27 @@ export class NotificationDetailsComponent {
       clientId: 102
     }
   ];
-  
+
   constructor(
     public dialogRef: MatDialogRef<RenterNotificationsComponent>,
-    @Inject(MAT_DIALOG_DATA) public carId: number 
+    @Inject(MAT_DIALOG_DATA) public notificationId: number,
+    private notificationService: RenterNotificationsServiceService,
+    private clientService: ClientService
   ) {}
 
   ngOnInit(): void {
-    this.getCarDetail(this.carId);
+    let renterNotification: any;
+    console.log(localStorage.getItem('auth-user'))
+    this.notificationService.getById(Number(this.notificationId)).subscribe((response: any) => {
+      //this.isFavourite = true;
+      renterNotification = response;
+      console.log(renterNotification)
+      this.car = renterNotification.car
+
+      //this.clientService.getById(Number(renterNotification.clientId)).subscribe((response: any) =>{
+        //console.log((response))
+      //})
+    })
   }
   onAcceptClick(): void {
     // perform accept action
@@ -115,7 +131,7 @@ export class NotificationDetailsComponent {
     this.dialogRef.close();
   }
 
-  getCarDetail(carId:number):void{    
-    this.car=this.cars.find(a => a.id === carId);    
+  getCarDetail(carId:number):void{
+    this.car=this.cars.find(a => a.id === carId);
   }
 }

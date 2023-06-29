@@ -41,6 +41,7 @@ export class CarComponent implements OnInit {
   ) {
     this.carId = this.route.snapshot.params.carId;
     this.clientId = localStorage.getItem('clientId');
+    console.log(this.clientId);
     this.carData = {} as Car;
     this.isFavourite = false;
   }
@@ -64,7 +65,7 @@ export class CarComponent implements OnInit {
       if(client.favourites[i].car.id == this.carId){
         this.isFavourite = true;
         this.favourite = {
-          clientId: client.clientId,
+          clientId: Number(this.clientId),
           carId: client.favourites[i].car.id,
           id: client.favourites[i].id,
           localStorageIndex: i
@@ -97,7 +98,7 @@ export class CarComponent implements OnInit {
 
     const newFav = {clientId:Number(this.clientId), carId:Number(this.carId)}
 
-    this.favouriteService.create(Number(this.clientId)-4, Number(this.carId), newFav).subscribe((response: any) => {
+    this.favouriteService.create(Number(this.clientId), Number(this.carId), newFav).subscribe((response: any) => {
       this.isFavourite = true;
       this.favourite = response;
 

@@ -48,10 +48,16 @@ export class LoginComponent implements OnInit {
         data => {
           this.tokenStorageService.saveToken(data.resource.token);
           this.tokenStorageService.saveUser(data.resource);
-          this.clientId = localStorage.getItem('clientId');
-          this.clientService.getById(Number(this.clientId)).subscribe((response: any) => {
-            this.tokenStorageService.saveClientInfo(response);
+          this.clientService.getByUserId(Number(data.resource.id)).subscribe((response: any) => {
+            window.localStorage.setItem('clientId', JSON.stringify(response.id));
+            this.clientId = localStorage.getItem('clientId');
+            this.clientService.getById(Number(this.clientId)).subscribe((response: any) => {
+              this.tokenStorageService.saveClientInfo(response);
+            })
           })
+          console.log(localStorage.getItem('clientInfo'));
+          console.log('aqui esta entrando? '+ this.clientId);
+
           this.isLoginFailed = false;
           this.isLoggedIn = true;
           this.roles = this.tokenStorageService.getUser().roles;

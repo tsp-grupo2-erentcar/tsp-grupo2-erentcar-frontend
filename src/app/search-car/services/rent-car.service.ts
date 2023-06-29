@@ -9,8 +9,8 @@ import {environment} from "../../../environments/environment";
   providedIn: 'root'
 })
 export class RentCarService {
-  //basePath = "https://tsp-grupo2-erentcar-backend-production.up.railway.app/api/v1/rents"
-  basePath = environment.baseUrlService+"api/v1/rents";
+  basePath = "https://app-tsp-grupo2-erentcar-backend-230628210157.azurewebsites.net/api/v1/rents"
+  //basePath = environment.baseUrlService+"api/v1/rents";
 
   httpOptions = {
     headers: new HttpHeaders({
@@ -51,8 +51,10 @@ export class RentCarService {
   }
 
   create(clientId: any, carId: any, item: any): Observable<Rent> {
-    return this.http.post<Rent>(`${ this.basePath }/client/${ clientId }/car/${ carId }`, JSON.stringify(item), this.httpOptions)
+    console.log("Entro al servicio")
+    return this.http.post<Rent>(`${ this.basePath }?clientId=${ clientId }&carId=${ carId }`, JSON.stringify(item), this.httpOptions)
       .pipe(
+
         retry(2),
         catchError(this.handleError)
       );

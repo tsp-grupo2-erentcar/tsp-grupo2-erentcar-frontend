@@ -1,9 +1,6 @@
 <div>
-  <div *ngIf="clientData.planId === null; else elseTemplate" class="container">
+  <div *ngIf="clientData.planId == null; else elseTemplate" class="container">
     <app-show-plans
-      [plans]="plans"
-      [myId]=clientData.id
-      [myPlanId]=(clientData.planId)
       (planStatusChangeCreate)="createPlanStatusChange($event)"
     ></app-show-plans>
   </div>

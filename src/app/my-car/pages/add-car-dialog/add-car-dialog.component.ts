@@ -83,11 +83,15 @@ export class AddCarDialogComponent implements OnInit {
     this.carService.create(this.clientId,this.modelId,data).subscribe(response=>{
       console.log("este es el response")
       console.log(response)
+      this.submitClicked.emit("a");
+     // this.reloadPage();
     })
-    this.submitClicked.emit("a");
+
   }
   ngOnInit(): void {
     this.getBrands()
   }
-
+   reloadPage(): void {
+    location.reload();
+  }
 }

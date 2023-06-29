@@ -13,7 +13,7 @@ import {Parser} from "@angular/compiler";
   styleUrls: ['./subscription.component.css']
 })
 export class SubscriptionComponent implements OnInit {
-  plans!: Plan[];
+  plans!: any;
   clientData!: Client;
 
   constructor(
@@ -24,7 +24,6 @@ export class SubscriptionComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.retrievePlans();
     this.retrieveClient();
   }
 
@@ -37,9 +36,10 @@ export class SubscriptionComponent implements OnInit {
   }
 
   retrievePlans() {
-    this.subscriptionService.getAll().subscribe((response: any) => {
-      this.plans = response.content;
-    });
+   this.subscriptionService.getAll().subscribe( (response)=>{
+     console.log(response)
+     this.plans=response.content
+   }  );
   }
 
   deletePlanStatusChange(ev: any) {

@@ -1,6 +1,3 @@
-<button mat-icon-button  mat-dialog-close class="close">
-  <mat-icon class="feature-icon">close</mat-icon>
-</button>
 <h1 mat-dialog-title>Agregar</h1>
 <mat-dialog-content class="dialog">
   <div class="body-dialog">
@@ -9,8 +6,8 @@
       <input [(ngModel)]="this.address" class="input" maxlength="50">
       <h3 class="title-dialog">Tipo:</h3>
       <select [(ngModel)]="this.type" class="select">
-        <option [value]="true" >Manual</option>
-        <option [value]="false" >Mecánico</option>
+        <option [value]="true" >Mecánico</option>
+        <option [value]="false" >Automático</option>
       </select>
 
       <h3 class="title-dialog">Car Value ($):</h3>
@@ -51,7 +48,8 @@
     <h3 class="title-dialog">Descripción:</h3>
     <textarea [(ngModel)]="this.extraInformation" class="text-area"></textarea>
     <div class="button-container">
-      <button mat-dialog-close (click)="addClick()">Agregar</button>
+      <button mat-dialog-close class="mat-button-spacing" (click)="addClick()">Agregar</button>
+      <button mat-dialog-close class="mat-button-spacing" >Cancelar</button>
     </div>
   </div>
 </mat-dialog-content>

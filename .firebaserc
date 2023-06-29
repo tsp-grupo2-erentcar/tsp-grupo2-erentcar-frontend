@@ -1,8 +1,5 @@
 {
   "projects": {
-    "default": "tsp-erentcar",
-    "erentcar": "tsp-erentcar"
-  },
-  "targets": {},
-  "etags": {}
+    "default": "erentcar-eb8ec"
+  }
 }

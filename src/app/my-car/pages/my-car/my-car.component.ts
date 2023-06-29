@@ -30,6 +30,8 @@ export class MyCarComponent implements OnInit {
     this.clientIdAux=Number(this.clientId)
   }
   getCars(){
+    console.log('Se obtieen los carros')
+    console.log(this.clientIdAux)
     this.clientId=this.clientIdAux.toString()
     console.log(this.clientId)
     this.clientsService.getById(this.clientId).subscribe(response=>{
@@ -70,9 +72,23 @@ export class MyCarComponent implements OnInit {
     dialogRef.componentInstance.submitClicked.subscribe(result=>{
       this.getCars()
     })
+    dialogRef.afterClosed().subscribe(result => {
+      this.getCars();
+    });
+  }
+   delete(id: number) {
+    console.log(id)
+    this.carsService.delete(id).subscribe((response)=>{
+      this.getCars();
+    });
+
+
+  }
+  reloadPage(): void {
+    location.reload();
   }
   openEditDialogCar(id: number) {
-    console.log(this.cars[id])
+    console.log('edito')
     const dialogRef = this.editCarDialog.open(EditCarDialogComponent, {
       width: "400px",
       data: {

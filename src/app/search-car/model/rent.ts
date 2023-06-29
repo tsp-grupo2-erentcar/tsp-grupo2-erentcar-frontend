@@ -5,5 +5,5 @@ export interface Rent {
   amount: number;
   rate: number;
   clientId: number,
-  carId: number,
+  car: any,
 }

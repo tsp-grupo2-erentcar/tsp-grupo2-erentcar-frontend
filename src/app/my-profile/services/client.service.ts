@@ -12,8 +12,8 @@ import {environment} from "../../../environments/environment";
 })
 export class ClientService {
 
-  //basePath = "https://tsp-grupo2-erentcar-backend-production.up.railway.app/api/v1/clients";
-  basePath = environment.baseUrlService + "api/v1/clients";
+  basePath = "https://app-tsp-grupo2-erentcar-backend-230628210157.azurewebsites.net/api/v1/clients";
+  //basePath = environment.baseUrlService + "api/v1/clients";
   httpOptions = {
     headers: new HttpHeaders({
       "Content-Type": "application/json"
@@ -45,14 +45,19 @@ export class ClientService {
       );
   }
 
-  getById(id: any): Observable<any> {/*Client*/
-    return this.http.get<any>(`${this.basePath}/${id}`, this.httpOptions)
+  getById(id: any): Observable<Client> {/*Client*/
       .pipe(
         retry(2),
         catchError(this.handleError)
       );
   }
-
+  getByUserId(id: any): Observable<any> {/*Client*/
+    return this.http.get<any>(`${this.basePath}/user/${id}`, this.httpOptions)
+      .pipe(
+        retry(2),
+        catchError(this.handleError)
+      );
+  }
   create(item: any): Observable<Client> {
     console.log(item)
     return this.http.post<Client>(this.basePath, JSON.stringify(item), this.httpOptions)
