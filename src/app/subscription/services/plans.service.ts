@@ -38,8 +38,8 @@ export class PlansService {
     return throwError('Something happened with request, please try again later');
   }
 
-  getAll(): Observable<Plan> {
-    return this.http.get<Plan>(this.basePath, this.httpOptions)
+  getAll(): Observable<any> {
+    return this.http.get<any>(this.basePath, this.httpOptions)
       .pipe(
         retry(2),
         catchError(this.handleError)

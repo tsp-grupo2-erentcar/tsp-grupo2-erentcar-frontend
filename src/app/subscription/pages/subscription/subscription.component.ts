@@ -13,7 +13,7 @@ import {Parser} from "@angular/compiler";
   styleUrls: ['./subscription.component.css']
 })
 export class SubscriptionComponent implements OnInit {
-  plans!: Plan[];
+  plans!: any;
   clientData!: Client;
 
   constructor(
@@ -24,7 +24,6 @@ export class SubscriptionComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.retrievePlans();
     this.retrieveClient();
   }
 
@@ -37,31 +36,10 @@ export class SubscriptionComponent implements OnInit {
   }
 
   retrievePlans() {
-    this.plans= [
-      {
-        id: 1,
-        name: "Basic Plan",
-        price: 9.99,
-        benefits: ["Feature 1", "Feature 2", "Feature 3","Feature 4"],
-        image: "path/to/basic_plan_image.jpg",
-      },
-      {
-        id: 2,
-        name: "Standard Plan",
-        price: 19.99,
-        benefits: ["Feature 1", "Feature 2", "Feature 3", "Feature 4"],
-        image: "path/to/standard_plan_image.jpg",
-      },
-      {
-        id: 3,
-        name: "Premium Plan",
-        price: 29.99,
-        benefits: ["Feature 1", "Feature 2", "Feature 3", "Feature 4" ],
-        image: "path/to/premium_plan_image.jpg",
-      },
-    ];
-   const a= this.subscriptionService.getAll().subscribe();
-   console.log(a);
+   this.subscriptionService.getAll().subscribe( (response)=>{
+     console.log(response)
+     this.plans=response.content
+   }  );
   }
 
   deletePlanStatusChange(ev: any) {
