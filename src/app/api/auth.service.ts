@@ -4,7 +4,7 @@ import {Observable} from "rxjs";
 import {environment} from "../../environments/environment";
 
 //const AUTH_API = environment.production ? 'https://erentcar.herokuapp.com/api/v1/users/auth/' : 'http://localhost:8080/api/v1/users/auth/';
-const baseURL = 'https://tsp-grupo2-erentcar-backend-production.up.railway.app/';
+const baseURL = 'https://app-tsp-grupo2-erentcar-backend-230628210157.azurewebsites.net/';
 //const baseURL = environment.baseUrlService;
 
 const httpOptions = {

@@ -9,7 +9,7 @@ import {environment} from "../../../environments/environment";
   providedIn: 'root'
 })
 export class RentCarService {
-  basePath = "https://tsp-grupo2-erentcar-backend-production.up.railway.app/api/v1/rents"
+  basePath = "https://app-tsp-grupo2-erentcar-backend-230628210157.azurewebsites.net/api/v1/rents"
   //basePath = environment.baseUrlService+"api/v1/rents";
 
   httpOptions = {

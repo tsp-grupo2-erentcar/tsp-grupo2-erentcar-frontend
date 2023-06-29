@@ -79,6 +79,10 @@ export class MyCarComponent implements OnInit {
   delete(id: number) {
     console.log(id)
     this.carsService.delete(id).subscribe();
+    this.reloadPage();
+  }
+  reloadPage(): void {
+    location.reload();
   }
   openEditDialogCar(id: number) {
     console.log('edito')

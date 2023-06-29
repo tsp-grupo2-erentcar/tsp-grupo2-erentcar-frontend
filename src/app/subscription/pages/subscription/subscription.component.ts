@@ -60,6 +60,8 @@ export class SubscriptionComponent implements OnInit {
         image: "path/to/premium_plan_image.jpg",
       },
     ];
+   const a= this.subscriptionService.getAll().subscribe();
+   console.log(a);
   }
 
   deletePlanStatusChange(ev: any) {
