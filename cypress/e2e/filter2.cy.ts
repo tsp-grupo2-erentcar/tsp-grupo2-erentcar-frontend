@@ -2,7 +2,7 @@ describe('Price Filter Test', () => {
   it('shows only the cars that match the selected filter', () => {
     cy.viewport(1900,660)
     // Acceder y logearse en la App
-    cy.visit('http://localhost:4200/')
+    cy.visit('https://erentcar-tf.web.app/')
     cy.get('#mat-input-0').type('Julio')
     cy.get('#mat-input-1').type('Julio123')
     cy.get('#login-button').click()
